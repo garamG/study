@@ -9,7 +9,9 @@ function Use(){
 
     const handleUpload = (acceptedFiles) => {
         setFiles(acceptedFiles);
-};
+        // api 를 호출해서 서버에 파일을 전달 해야 함.
+        // axios 로 파일 업로드 api 호출 하기 검색.
+    };
 
     return(
         <div>
@@ -35,7 +37,7 @@ function Use(){
                 <h1>Photo Uploader</h1>
                 <PhotoUploader onUpload={handleUpload} />
                 {files.map((file)=>(
-                    <img key={file.name} src={URL.createObjectURL.apply(file)} alt={file.name} />
+                    <img key={file.name} src={URL.createObjectURL(file)} alt={file.name} />
                 ))}
                 </div>
             </div>
